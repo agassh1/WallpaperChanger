@@ -83,5 +83,8 @@
   <ItemGroup>
     <None Include="Resources\бабуин.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Cartman_Hitler_head_icon_30690.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

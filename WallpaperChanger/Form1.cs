@@ -70,8 +70,27 @@ namespace WallpaperChanger
         public MainForm()
         {
             InitializeComponent();
-            timer.Elapsed += TimerFunc;
 
+            notifyIcon1.Visible = false;
+            notifyIcon1.Text = this.Text;
+
+            timer.Elapsed += TimerFunc;
+            this.Resize += MainForm_Resized;
+        }
+
+        private void MainForm_Minimized()
+        {
+            this.Hide();
+            notifyIcon1.Visible = true;
+
+        }
+
+        private void MainForm_Resized(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Minimized)
+            {
+                MainForm_Minimized();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -120,6 +139,13 @@ namespace WallpaperChanger
             }
             timer.Enabled = !timer.Enabled;
             MessageBox.Show(timer.Enabled ? "таймер активирован!" : "таймер выключен!");
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            notifyIcon1.Visible = false;
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

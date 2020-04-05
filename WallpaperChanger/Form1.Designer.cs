@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.button1 = new System.Windows.Forms.Button();
             this.textLine = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.startChangerButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.call = new System.Windows.Forms.TextBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(312, 47);
+            this.button1.Location = new System.Drawing.Point(317, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 23);
             this.button1.TabIndex = 1;
@@ -49,7 +52,7 @@
             // textLine
             // 
             this.textLine.Enabled = false;
-            this.textLine.Location = new System.Drawing.Point(67, 49);
+            this.textLine.Location = new System.Drawing.Point(72, 60);
             this.textLine.Name = "textLine";
             this.textLine.Size = new System.Drawing.Size(239, 20);
             this.textLine.TabIndex = 0;
@@ -60,7 +63,7 @@
             this.startChangerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.startChangerButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.startChangerButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.startChangerButton.Location = new System.Drawing.Point(67, 104);
+            this.startChangerButton.Location = new System.Drawing.Point(72, 115);
             this.startChangerButton.Name = "startChangerButton";
             this.startChangerButton.Size = new System.Drawing.Size(339, 308);
             this.startChangerButton.TabIndex = 2;
@@ -75,20 +78,30 @@
             // call
             // 
             this.call.Enabled = false;
-            this.call.Location = new System.Drawing.Point(67, 76);
+            this.call.Location = new System.Drawing.Point(72, 89);
             this.call.Name = "call";
             this.call.Size = new System.Drawing.Size(339, 20);
             this.call.TabIndex = 3;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 483);
+            this.ClientSize = new System.Drawing.Size(468, 495);
             this.Controls.Add(this.call);
             this.Controls.Add(this.startChangerButton);
             this.Controls.Add(this.textLine);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(484, 533);
+            this.MinimumSize = new System.Drawing.Size(484, 533);
             this.Name = "MainForm";
             this.Text = "WallpaperChanger";
             this.ResumeLayout(false);
@@ -104,6 +117,7 @@
         private System.Windows.Forms.Button startChangerButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox call;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
