@@ -24,13 +24,7 @@ namespace WallpaperChanger
             var value = roller.Value;
 
             MainForm.SetDelay((int)value);
-
-            var result = MessageBox.Show("Значение установлено!", "Оповещение еп");
-
-            if(result == DialogResult.OK)
-            {
-                this.Hide();
-            }
+            
         }
     }
 }
