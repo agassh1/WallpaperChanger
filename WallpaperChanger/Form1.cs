@@ -26,6 +26,8 @@ namespace WallpaperChanger
             public const int SPIF_UPDATEINIFILE = 0x1;
             public const int SPIF_SENDWININICHANGE = 0x2;
 
+        SettingsForm sform = new SettingsForm();
+
         string folderPath = "";
         string currentImageFilePath = "";
 
@@ -33,11 +35,16 @@ namespace WallpaperChanger
 
         static int Seed = DateTime.Now.Minute * DateTime.Now.Second;
 
-        TMR timer = new TMR(1000);
+        static int delay = 1000;
+        TMR timer = new TMR(delay);
 
         Random randomTimer = new Random(Seed * DateTime.Now.Hour);
         Random randomImaging = new Random(Seed);
 
+        static public void SetDelay(int _delay)
+        {
+            delay = _delay > 1222 ? _delay : delay;
+        }
         void TimerFunc(object sender, EventArgs e)
         {
             CheckFolder();
@@ -47,9 +54,9 @@ namespace WallpaperChanger
             string imageFile = imageFiles[currID];
             
             ChangeWallpaper(imageFile);
-            timer.Interval = nextDelay;
+            timer.Interval = delay;
 
-            call.Text = $"Delay = {nextDelay} ID = {currID} : {imageFile}";
+            call.Text = $"Delay = {timer.Interval} ID = {currID} : {imageFile}";
         }
 
         int ChangeWallpaper(string currImagePath)
@@ -146,6 +153,11 @@ namespace WallpaperChanger
             this.Show();
             notifyIcon1.Visible = false;
             this.WindowState = FormWindowState.Normal;
+        }
+
+        private void startchargedelay_Click(object sender, EventArgs e)
+        {
+            sform.Show();
         }
     }
 }

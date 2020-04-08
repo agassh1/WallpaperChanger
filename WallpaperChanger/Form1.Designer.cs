@@ -33,10 +33,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textLine = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.startChangerButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.call = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.startchargedelay = new System.Windows.Forms.Button();
+            this.startChangerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -57,20 +58,6 @@
             this.textLine.Size = new System.Drawing.Size(239, 20);
             this.textLine.TabIndex = 0;
             // 
-            // startChangerButton
-            // 
-            this.startChangerButton.BackgroundImage = global::WallpaperChanger.Properties.Resources.бабуин;
-            this.startChangerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.startChangerButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.startChangerButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.startChangerButton.Location = new System.Drawing.Point(72, 115);
-            this.startChangerButton.Name = "startChangerButton";
-            this.startChangerButton.Size = new System.Drawing.Size(339, 308);
-            this.startChangerButton.TabIndex = 2;
-            this.startChangerButton.Text = "button2";
-            this.startChangerButton.UseVisualStyleBackColor = true;
-            this.startChangerButton.Click += new System.EventHandler(this.startChangerButton_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -90,11 +77,36 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // startchargedelay
+            // 
+            this.startchargedelay.Location = new System.Drawing.Point(72, 429);
+            this.startchargedelay.Name = "startchargedelay";
+            this.startchargedelay.Size = new System.Drawing.Size(339, 54);
+            this.startchargedelay.TabIndex = 4;
+            this.startchargedelay.Text = "ChangeDef";
+            this.startchargedelay.UseVisualStyleBackColor = true;
+            this.startchargedelay.Click += new System.EventHandler(this.startchargedelay_Click);
+            // 
+            // startChangerButton
+            // 
+            this.startChangerButton.BackgroundImage = global::WallpaperChanger.Properties.Resources.бабуин;
+            this.startChangerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.startChangerButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.startChangerButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.startChangerButton.Location = new System.Drawing.Point(72, 115);
+            this.startChangerButton.Name = "startChangerButton";
+            this.startChangerButton.Size = new System.Drawing.Size(339, 308);
+            this.startChangerButton.TabIndex = 2;
+            this.startChangerButton.Text = "button2";
+            this.startChangerButton.UseVisualStyleBackColor = true;
+            this.startChangerButton.Click += new System.EventHandler(this.startChangerButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 495);
+            this.Controls.Add(this.startchargedelay);
             this.Controls.Add(this.call);
             this.Controls.Add(this.startChangerButton);
             this.Controls.Add(this.textLine);
@@ -118,6 +130,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox call;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button startchargedelay;
     }
 }
 
