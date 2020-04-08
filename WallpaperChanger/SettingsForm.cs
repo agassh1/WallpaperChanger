@@ -24,7 +24,13 @@ namespace WallpaperChanger
             var value = roller.Value;
 
             MainForm.SetDelay((int)value);
-            
+
+            var result = MessageBox.Show("Значение установлено!");
+
+            if (result == DialogResult.OK)
+            {
+                this.Hide();
+            }
         }
     }
 }
